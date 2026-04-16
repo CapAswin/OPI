@@ -93,17 +93,20 @@ body {
   font-size: 0.8rem;
   padding: 0.48rem 0.95rem;
   border-radius: 999px;
-  transition: background 0.25s ease, color 0.25s ease;
+  border: 0;
+  transition: background 0.25s ease, color 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .desktop-nav a:hover {
   color: #162227;
-  background: rgba(255, 255, 255, 0.7);
+  background: transparent;
 }
 
 .desktop-nav a.current {
   color: #111a1d;
-  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  background: transparent;
+  font-weight: 600;
 }
 
 .header-right {
@@ -337,9 +340,13 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: linear-gradient(180deg, rgba(31, 35, 40, 0.92), rgba(22, 25, 30, 0.92));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.22);
   padding: 1.2rem 1.1rem 2.7rem;
   transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease;
 }
@@ -390,8 +397,8 @@ body {
 }
 
 .content-card:hover {
-  border-color: rgba(212, 175, 53, 0.44);
-  background: linear-gradient(180deg, rgba(36, 40, 46, 0.95), rgba(24, 28, 34, 0.95));
+  border-color: rgba(255, 255, 255, 0.42);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
   transform: translateY(-2px);
 }
 
