@@ -17,29 +17,41 @@ if (menuButton && mobileMenu) {
   });
 }
 
-// Home: first scroll exits hero to next section
-const overviewSection = document.getElementById("overview");
-const homeHero = document.getElementById("home");
+// Landing hero: downward interaction exits to next section below
+const landingHero = document.querySelector("main > section.hero-frame");
+const nextSection = landingHero ? landingHero.nextElementSibling : null;
+const scrollIndicator = landingHero ? landingHero.querySelector(".scroll-indicator") : null;
 
-if (overviewSection && homeHero) {
-  let didAutoJump = false;
+if (landingHero && nextSection) {
   let touchStartY = 0;
 
-  const jumpToOverview = () => {
-    if (didAutoJump) return;
-    didAutoJump = true;
-    overviewSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  const isInLandingHero = () => window.scrollY < landingHero.offsetHeight - 40;
+  const isAtTopOfNextSection = () => {
+    const y = window.scrollY;
+    const top = nextSection.offsetTop;
+    return y >= top - 6 && y <= top + 60;
+  };
+
+  const jumpToNextSection = () => {
+    nextSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const jumpToHero = () => {
+    landingHero.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   window.addEventListener(
     "wheel",
     (e) => {
-      if (didAutoJump) return;
-      const inHero = window.scrollY < 8;
-      if (!inHero) return;
-      if (e.deltaY > 0) {
+      if (isInLandingHero() && e.deltaY > 0) {
         e.preventDefault();
-        jumpToOverview();
+        jumpToNextSection();
+        return;
+      }
+
+      if (isAtTopOfNextSection() && e.deltaY < 0) {
+        e.preventDefault();
+        jumpToHero();
       }
     },
     { passive: false }
@@ -57,15 +69,38 @@ if (overviewSection && homeHero) {
   window.addEventListener(
     "touchmove",
     (e) => {
-      if (didAutoJump) return;
-      const inHero = window.scrollY < 8;
-      if (!inHero) return;
       if (!e.touches || e.touches.length === 0) return;
       const delta = touchStartY - e.touches[0].clientY;
-      if (delta > 12) {
-        jumpToOverview();
-      }
+
+      // swipe up while in hero -> next section
+      if (isInLandingHero() && delta > 12) jumpToNextSection();
+
+      // swipe down while at top of next section -> hero
+      if (isAtTopOfNextSection() && delta < -12) jumpToHero();
     },
     { passive: true }
   );
+
+  window.addEventListener("keydown", (e) => {
+    const wantsDown =
+      e.key === "ArrowDown" || e.key === "PageDown" || (e.key === " " && !e.shiftKey);
+    const wantsUp = e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
+
+    if (wantsDown && isInLandingHero()) {
+      e.preventDefault();
+      jumpToNextSection();
+    }
+
+    if (wantsUp && isAtTopOfNextSection()) {
+      e.preventDefault();
+      jumpToHero();
+    }
+  });
+
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener("click", (e) => {
+      e.preventDefault();
+      jumpToNextSection();
+    });
+  }
 }
