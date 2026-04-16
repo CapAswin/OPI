@@ -34,9 +34,9 @@ body {
 
 .hero-full {
   min-height: calc(100vh - 2rem);
-  margin: 1rem;
+  margin: 0.5rem 1rem 1rem;
   border-radius: 1.5rem;
-  border: 1px solid rgba(10, 120, 111, 0.45);
+  border: 0;
   box-shadow: 0 25px 50px rgba(2, 7, 8, 0.5);
 }
 
@@ -64,7 +64,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1rem 0;
+  padding: 0.55rem 1rem 0;
 }
 
 .brand-mark img {
@@ -121,8 +121,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 999px;
   padding: 0.52rem 0.92rem;
-  background: rgba(255, 255, 255, 0.85);
-  transition: color 0.32s ease, border-color 0.32s ease;
+  background: linear-gradient(180deg, #ffffff, #f8f6ef);
+  transition: color 0.82s ease, border-color 0.82s ease, box-shadow 0.82s ease;
 }
 
 .contact-chip::before {
@@ -133,23 +133,47 @@ body {
   width: 0.46rem;
   height: 0.46rem;
   border-radius: 999px;
-  background: #103022;
+  background: linear-gradient(180deg, #ebd58a, var(--secondary));
   transform: translate(50%, -50%) scale(0);
   transform-origin: center;
-  transition: transform 0.45s ease;
+  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.contact-chip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 24%,
+    rgba(255, 255, 255, 0.34) 49%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  transform: translateX(-125%);
+  opacity: 0;
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease;
   z-index: 0;
 }
 
 .contact-chip:hover {
-  color: #f6fbf8;
-  border-color: rgba(16, 48, 34, 0.95);
+  color: #1f1707;
+  border-color: rgba(212, 175, 53, 0.95);
+  box-shadow: 0 10px 24px rgba(212, 175, 53, 0.33);
 }
 
 .contact-chip:hover::before {
-  transform: translate(50%, -50%) scale(44);
+  transform: translate(50%, -50%) scale(52);
 }
 
-.contact-chip > * {
+.contact-chip:hover::after {
+  transform: translateX(120%);
+  opacity: 1;
+}
+
+.chip-label,
+.chip-dot {
   position: relative;
   z-index: 1;
 }
@@ -158,13 +182,13 @@ body {
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 999px;
-  background: #ff9700;
+  background: var(--secondary);
   display: inline-block;
-  transition: background 0.25s ease;
+  transition: background 0.55s ease;
 }
 
 .contact-chip:hover .chip-dot {
-  background: #ff9700;
+  background: #ffffff;
 }
 
 .menu-btn {
@@ -235,8 +259,8 @@ body {
 
 .section-dark {
   background: rgba(8, 22, 20, 0.45);
-  border-top: 1px solid rgba(212, 175, 53, 0.14);
-  border-bottom: 1px solid rgba(212, 175, 53, 0.14);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .home-container {
@@ -337,14 +361,14 @@ body {
   gap: 0.65rem;
   margin-top: 1.4rem;
   text-decoration: none;
-  color: #1f2a16;
+  color: #1d1708;
   font-weight: 500;
   font-size: 0.9rem;
   border-radius: 999px;
   padding: 0.56rem 0.6rem 0.56rem 1.2rem;
-  border: 1px solid rgba(206, 242, 155, 0.65);
-  background: linear-gradient(180deg, #cbf19e, #b8e985);
-  box-shadow: 0 8px 20px rgba(164, 219, 92, 0.3);
+  border: 1px solid rgba(212, 175, 53, 0.72);
+  background: linear-gradient(180deg, #e7cf78, var(--secondary));
+  box-shadow: 0 8px 20px rgba(212, 175, 53, 0.34);
 }
 
 .start-btn::after {
@@ -352,7 +376,7 @@ body {
   width: 0.92rem;
   height: 0.92rem;
   border-radius: 999px;
-  background: #103022;
+  background: #3b2c08;
 }
 
 .hero-line {
@@ -386,7 +410,7 @@ body {
 
 @media (min-width: 820px) {
   .hero-header {
-    padding: 1rem 1.4rem 0;
+    padding: 0.5rem 1.4rem 0;
   }
 
   .desktop-nav {
