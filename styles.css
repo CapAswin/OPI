@@ -13,6 +13,10 @@ body {
   min-height: 100%;
 }
 
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
 .landing-shell {
   min-height: 100vh;
   padding: 1.2rem;
@@ -64,7 +68,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.55rem 1rem 0;
+  padding: 0.3rem 1rem 0;
 }
 
 .brand-mark img {
@@ -327,31 +331,71 @@ body {
 }
 
 .content-card {
+  position: relative;
+  overflow: hidden;
   border-radius: 0.8rem;
-  border: 1px solid rgba(212, 175, 53, 0.18);
-  background: rgba(8, 16, 18, 0.5);
-  padding: 1rem 1rem 1.05rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, rgba(31, 35, 40, 0.92), rgba(22, 25, 30, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.1rem 2.7rem;
+  transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease;
+}
+
+.content-card::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 2.05rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.content-card::after {
+  content: "›";
+  position: absolute;
+  right: 0.95rem;
+  bottom: 0.62rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 53, 0.45);
+  color: var(--secondary);
+  font-size: 1rem;
+  line-height: 1;
+  background: rgba(14, 18, 24, 0.82);
+  transition: all 0.28s ease;
 }
 
 .content-card h3 {
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.5rem 0;
   color: #fff;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
 .content-card p {
   margin: 0;
-  color: #c7cfca;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  color: #b8c0ca;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  max-width: 96%;
 }
 
 .content-card:hover {
-  border-color: rgba(212, 175, 53, 0.34);
-  background: rgba(9, 20, 22, 0.62);
+  border-color: rgba(212, 175, 53, 0.44);
+  background: linear-gradient(180deg, rgba(36, 40, 46, 0.95), rgba(24, 28, 34, 0.95));
+  transform: translateY(-2px);
+}
+
+.content-card:hover::after {
+  border-color: rgba(212, 175, 53, 0.8);
+  color: #111;
+  background: var(--secondary);
 }
 
 .start-btn {
@@ -410,7 +454,7 @@ body {
 
 @media (min-width: 820px) {
   .hero-header {
-    padding: 0.5rem 1.4rem 0;
+    padding: 0.28rem 1.4rem 0;
   }
 
   .desktop-nav {

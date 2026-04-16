@@ -13,9 +13,9 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="bg-[#07090f] font-['Inter'] text-white antialiased">
-    <main class="landing-shell">
-      <section class="hero-frame">
+  <body class="home-page bg-[#07090f] font-['Inter'] text-white antialiased">
+    <main>
+      <section class="hero-frame hero-full">
         <video class="hero-video" autoplay muted loop playsinline>
           <source src="./assets/bg_video/body_bg.mp4" type="video/mp4" />
         </video>
@@ -26,17 +26,19 @@
             <img src="./assets/images/fav_long.png" alt="Opulent Prime Investment" />
           </a>
           <nav class="desktop-nav">
+            <a href="./index.html">Home</a>
             <a class="current" href="./solutions.html">Solutions</a>
             <a href="./investments.html">Investments</a>
             <a href="./projects.html">Projects</a>
           </nav>
           <div class="header-right">
-            <a href="./contact.html" class="contact-chip"><span class="chip-label">Contact Us</span></a>
-            <button id="menu-button" class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+            <a href="./contact.html" class="contact-chip"><span class="chip-label">Contact Us</span> <span class="chip-dot"></span></a>
+            <button id="menu-button" class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
           </div>
         </header>
 
         <div id="mobile-menu" class="mobile-menu hidden">
+          <a href="./index.html" class="mobile-link">Home</a>
           <a href="./solutions.html" class="mobile-link">Solutions</a>
           <a href="./investments.html" class="mobile-link">Investments</a>
           <a href="./projects.html" class="mobile-link">Projects</a>
