@@ -337,6 +337,14 @@ body {
   color: var(--secondary);
 }
 
+.home-hero-sub {
+  margin: 0;
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .home-hero-nav {
   width: min(520px, 100%);
 }
