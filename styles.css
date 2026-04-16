@@ -274,6 +274,11 @@ body {
   padding: 0.55rem 0.2rem;
 }
 
+.mobile-menu a.mobile-link.current {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
 .hidden {
   display: none;
 }
@@ -427,6 +432,66 @@ body {
 
 .home-block-head .home-title {
   text-wrap: balance;
+}
+
+/* Portfolio / long-form prose pages */
+.folio-prose {
+  max-width: 44rem;
+  margin-top: 1rem;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.folio-prose > p {
+  margin: 0 0 1rem;
+}
+
+.folio-prose > p:last-child {
+  margin-bottom: 0;
+}
+
+.folio-prose ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.folio-prose li {
+  margin-bottom: 0.45rem;
+}
+
+.folio-prose li:last-child {
+  margin-bottom: 0;
+}
+
+.folio-prose strong {
+  font-weight: 600;
+}
+
+.folio-h3 {
+  margin: 2rem 0 0.35rem;
+  font-size: clamp(1.08rem, 2vw, 1.22rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.folio-h3:first-of-type {
+  margin-top: 0.75rem;
+}
+
+.folio-tagline {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.folio-prose--beliefs > p {
+  margin-bottom: 0.7rem;
 }
 
 .home-card-grid {
