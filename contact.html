@@ -67,17 +67,91 @@
           <a href="./contact.html" class="mobile-link current">Contact</a>
         </div>
 
-        <div class="hero-content page">
+        <div class="hero-content page hero-content--contact">
           <h1 class="home-hero-headline">Investor Inquiry</h1>
           <p>
             Every investment starts with a conversation. Before capital is allocated, before strategies are built, before opportunities are explored&mdash;there is one step that matters more than anything else: understanding the investor. Your objectives. Your timeline. Your comfort with risk. Your expectations.
           </p>
           <p>
-            This is not a form. This is the beginning of a structured relationship.
+            Share your details below. Our team will connect with you to design an approach aligned with your vision.
           </p>
-          <p>
-            Share your details, and our team will connect with you to design an approach aligned with your vision.
-          </p>
+
+          <div class="inquiry-form-card">
+            <h2 class="inquiry-form-title">Inquiry details</h2>
+            <p class="inquiry-form-lede">
+              Tell us who you are, how much you are considering allocating, in which currency, and the time horizon that fits your goals.
+            </p>
+            <form id="inquiry-form" class="inquiry-form" novalidate>
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="inquiry-name">Full name</label>
+                <input
+                  class="inquiry-input"
+                  type="text"
+                  id="inquiry-name"
+                  name="full_name"
+                  autocomplete="name"
+                  required
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="inquiry-email">Email</label>
+                <input
+                  class="inquiry-input"
+                  type="email"
+                  id="inquiry-email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="inquiry-field">
+                <span class="inquiry-label">Amount to invest</span>
+                <div class="inquiry-amount-row">
+                  <input
+                    class="inquiry-input"
+                    type="text"
+                    id="inquiry-amount"
+                    name="amount"
+                    inputmode="decimal"
+                    required
+                    placeholder="e.g. 250000"
+                    aria-label="Investment amount"
+                  />
+                  <div class="inquiry-field-inline">
+                    <label class="visually-hidden" for="inquiry-currency">Currency</label>
+                    <select class="inquiry-select" id="inquiry-currency" name="currency" required>
+                      <option value="" disabled selected hidden>Currency</option>
+                      <option value="AED">AED</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                      <option value="CHF">CHF</option>
+                      <option value="SAR">SAR</option>
+                      <option value="KWD">KWD</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="inquiry-period">Investment period</label>
+                <select class="inquiry-select" id="inquiry-period" name="period" required>
+                  <option value="" disabled selected hidden>Select a time horizon</option>
+                  <option value="short">Short-term perspective (12–18 months)</option>
+                  <option value="mid">Mid-term allocation (18+ to 24 months)</option>
+                  <option value="long">Long-term wealth creation (24+ months)</option>
+                </select>
+                <div id="inquiry-period-hint" class="inquiry-period-hint" role="region" aria-live="polite" hidden></div>
+              </div>
+              <button type="submit" class="start-btn inquiry-submit">Submit inquiry</button>
+              <p class="inquiry-form-note">
+                Opens your email app with a draft to our team. You can edit the message before sending.
+              </p>
+            </form>
+          </div>
+
           <div class="content-grid">
             <article class="content-card">
               <div class="content-card__media">
