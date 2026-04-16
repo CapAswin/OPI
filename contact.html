@@ -12,6 +12,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ffffff",
+              secondary: "#d4ae36",
+              soft: "#d8ded6",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body class="home-page bg-white font-['Inter'] text-neutral-900 antialiased">
     <main>
@@ -28,13 +42,18 @@
 
           <nav class="desktop-nav" aria-label="Main navigation">
             <a href="./index.html">Home</a>
-            <a href="./investments.html">Investments</a>
-            <a href="./insights.html">Insights</a>
             <a href="./about.html">About Us</a>
+            <a href="./investments.html">Investments</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./insights.html">Insights</a>
             <a class="current" href="./contact.html" aria-current="page">Contact</a>
           </nav>
 
           <div class="header-right">
+            <a href="./contact.html" class="contact-chip">
+              <span class="chip-label">Contact Us</span>
+              <span class="chip-dot"></span>
+            </a>
             <button id="menu-button" class="menu-btn" aria-label="Open menu" aria-expanded="false">
               <span></span><span></span>
             </button>
@@ -43,9 +62,10 @@
 
         <div id="mobile-menu" class="mobile-menu hidden">
           <a href="./index.html" class="mobile-link">Home</a>
-          <a href="./investments.html" class="mobile-link">Investments</a>
-          <a href="./insights.html" class="mobile-link">Insights</a>
           <a href="./about.html" class="mobile-link">About Us</a>
+          <a href="./investments.html" class="mobile-link">Investments</a>
+          <a href="./portfolio.html" class="mobile-link">Portfolio</a>
+          <a href="./insights.html" class="mobile-link">Insights</a>
           <a href="./contact.html" class="mobile-link current">Contact</a>
         </div>
 
