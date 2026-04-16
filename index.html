@@ -21,8 +21,8 @@
         theme: {
           extend: {
             colors: {
-              primary: "#082E29",
-              secondary: "#d4af35",
+              primary: "#ffffff",
+              secondary: "#d4ae36",
               soft: "#d8ded6",
             },
           },
@@ -30,7 +30,7 @@
       };
     </script>
   </head>
-  <body class="home-page bg-[#07090f] font-['Inter'] text-white antialiased">
+  <body class="home-page bg-white font-['Inter'] text-neutral-900 antialiased">
     <main>
       <section id="home" class="hero-frame hero-full">
         <video
@@ -92,16 +92,49 @@
             </header>
             <div class="home-card-grid" role="list">
               <article class="content-card" role="listitem">
-                <h3>Wealth Management</h3>
-                <p>Long-term portfolio planning aligned with your targets, timeline, and risk tolerance.</p>
+                <div class="content-card__media">
+                  <img
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0ad32b?w=800&q=80"
+                    alt=""
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="content-card__body">
+                  <h3>Wealth Management</h3>
+                  <p>Long-term portfolio planning aligned with your targets, timeline, and risk tolerance.</p>
+                </div>
               </article>
               <article class="content-card" role="listitem">
-                <h3>Portfolio Advisory</h3>
-                <p>Active guidance across global markets with strategy reviews and optimization cycles.</p>
+                <div class="content-card__media">
+                  <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                    alt=""
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="content-card__body">
+                  <h3>Portfolio Advisory</h3>
+                  <p>Active guidance across global markets with strategy reviews and optimization cycles.</p>
+                </div>
               </article>
               <article class="content-card" role="listitem">
-                <h3>Risk Management</h3>
-                <p>Structured protection frameworks to preserve capital during uncertain market periods.</p>
+                <div class="content-card__media">
+                  <img
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+                    alt=""
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="content-card__body">
+                  <h3>Risk Management</h3>
+                  <p>Structured protection frameworks to preserve capital during uncertain market periods.</p>
+                </div>
               </article>
             </div>
           </div>
@@ -113,19 +146,31 @@
               <p class="home-kicker">Why Opulent Prime</p>
               <h2 class="home-title home-title--compact">Built on Trust, Discipline, and Long-Term Performance</h2>
             </header>
-            <div class="home-stats-board" role="list">
-              <div class="home-stat" role="listitem">
-                <p class="home-stat-value">$5.2B+</p>
-                <p class="home-stat-label">Assets advised through diversified and actively governed portfolios.</p>
-              </div>
-              <div class="home-stat" role="listitem">
-                <p class="home-stat-value">18+ Years</p>
-                <p class="home-stat-label">Regional and international expertise across multiple asset classes.</p>
-              </div>
-              <div class="home-stat" role="listitem">
-                <p class="home-stat-value">1200+ Clients</p>
-                <p class="home-stat-label">Private and corporate relationships built on consistency and transparency.</p>
-              </div>
+            <div class="home-stats-grid" role="list">
+              <article class="content-card content-card--stat" role="listitem">
+                <div class="content-card__media content-card__media--pattern" aria-hidden="true"></div>
+                <div class="content-card__body">
+                  <p class="content-card__stat">$5.2B+</p>
+                  <h3 class="content-card__stat-title">Assets advised</h3>
+                  <p class="content-card__lede">Diversified and actively governed portfolios.</p>
+                </div>
+              </article>
+              <article class="content-card content-card--stat" role="listitem">
+                <div class="content-card__media content-card__media--pattern" aria-hidden="true"></div>
+                <div class="content-card__body">
+                  <p class="content-card__stat">18+ Years</p>
+                  <h3 class="content-card__stat-title">Experience</h3>
+                  <p class="content-card__lede">Regional and international expertise across asset classes.</p>
+                </div>
+              </article>
+              <article class="content-card content-card--stat" role="listitem">
+                <div class="content-card__media content-card__media--pattern" aria-hidden="true"></div>
+                <div class="content-card__body">
+                  <p class="content-card__stat">1200+</p>
+                  <h3 class="content-card__stat-title">Clients</h3>
+                  <p class="content-card__lede">Relationships built on consistency and transparency.</p>
+                </div>
+              </article>
             </div>
           </div>
         </section>
