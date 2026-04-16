@@ -17,6 +17,20 @@ if (menuButton && mobileMenu) {
   });
 }
 
+// Burn effect on scroll
+const burnEl = document.getElementById("hero-burn");
+const heroSection = document.querySelector(".hero-frame");
+
+if (burnEl && heroSection) {
+  const updateBurn = () => {
+    const heroH = heroSection.offsetHeight;
+    const progress = Math.min(window.scrollY / (heroH * 0.75), 1);
+    burnEl.style.opacity = progress;
+  };
+  window.addEventListener("scroll", updateBurn, { passive: true });
+  updateBurn();
+}
+
 // Landing hero: downward interaction exits to next section below
 const landingHero = document.querySelector("main > section.hero-frame");
 const nextSection = landingHero ? landingHero.nextElementSibling : null;
