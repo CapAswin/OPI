@@ -126,7 +126,7 @@ body {
   border-radius: 999px;
   padding: 0.52rem 0.92rem;
   background: linear-gradient(180deg, #ffffff, #f8f6ef);
-  transition: color 0.82s ease, border-color 0.82s ease, box-shadow 0.82s ease;
+  transition: color 1.05s ease, border-color 1.05s ease, box-shadow 1.05s ease;
 }
 
 .contact-chip::before {
@@ -138,9 +138,11 @@ body {
   height: 0.46rem;
   border-radius: 999px;
   background: linear-gradient(180deg, #ebd58a, var(--secondary));
-  transform: translate(50%, -50%) scale(0);
+  transform: translate(50%, -50%) scale(0.001);
   transform-origin: center;
-  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.92;
+  will-change: transform;
+  transition: transform 1.35s ease, opacity 1.35s ease;
   z-index: 0;
 }
 
@@ -157,7 +159,7 @@ body {
   );
   transform: translateX(-125%);
   opacity: 0;
-  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease;
+  transition: transform 1.35s ease, opacity 1.35s ease;
   z-index: 0;
 }
 
@@ -169,6 +171,7 @@ body {
 
 .contact-chip:hover::before {
   transform: translate(50%, -50%) scale(52);
+  opacity: 1;
 }
 
 .contact-chip:hover::after {
