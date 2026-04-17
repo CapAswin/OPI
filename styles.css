@@ -532,10 +532,7 @@ body.has-mobile-menu-open {
 .home-below-hero {
   position: relative;
   background-color: #fafafa;
-  background-image:
-    linear-gradient(rgba(28, 25, 18, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 25, 18, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px, 40px 40px;
+ background-size: 40px 40px, 40px 40px;
 }
 
 .home-below-hero .home-section {
@@ -1359,7 +1356,15 @@ body.has-mobile-menu-open {
   font-size: clamp(1.15rem, 2.2vw, 1.35rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--heading);
+  color: #ffffff;
+}
+
+.contact-main .inquiry-form-card .inquiry-form-title {
+  color: #ffffff !important;
+}
+
+.contact-main .inquiry-form-card .inquiry-label {
+  color: #ffffff !important;
 }
 
 .inquiry-form-lede {
@@ -2067,33 +2072,37 @@ body.has-nav-card-open {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: clamp(0.95rem, 2vw, 1.35rem);
-  margin-top: clamp(1.1rem, 2.4vw, 1.8rem);
+  gap: clamp(0.7rem, 1.4vw, 0.95rem);
+  margin-top: clamp(0.75rem, 1.5vw, 1.05rem);
 }
 
 .page-card-content--portfolio .portfolio-card {
   grid-column: span 12;
   height: 100%;
   align-items: stretch;
-  min-height: clamp(20rem, 34vw, 24rem);
+  min-height: clamp(14rem, 23vw, 17.5rem);
+  padding: 1rem;
 }
 
 .page-card-content--portfolio .portfolio-card .content-card__media {
-  height: clamp(12rem, 20vw, 15rem);
+  height: clamp(7rem, 11vw, 9rem);
 }
 
 .page-card-content--portfolio .portfolio-card .content-card__body {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .page-card-content--portfolio .portfolio-card .content-card__body h3 {
   margin-bottom: 0;
+  font-size: clamp(1.25rem, 2.15vw, 1.55rem);
 }
 
 .page-card-content--portfolio .portfolio-card .content-card__body p {
   margin-top: 0;
+  font-size: 0.82rem;
+  line-height: 1.42;
 }
 
 .page-card-content--portfolio .portfolio-card .portfolio-card__cta-link {
@@ -2110,6 +2119,111 @@ body.has-nav-card-open {
   font-size: 0.8rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+/* End cards across pages: black base with gold radial texture */
+.home-section--outro .home-cta-panel,
+.page-card-content--portfolio .portfolio-card--cta,
+.page-card-content .feature-link-grid > a,
+.contact-main > .content-grid > .content-card:last-child {
+  border-color: rgba(212, 174, 54, 0.34);
+  background-color: #000000 !important;
+  background-image: repeating-radial-gradient(
+    circle at 92% 96%,
+    transparent 0px,
+    transparent 11px,
+    rgba(212, 174, 54, 0.24) 11px,
+    rgba(212, 174, 54, 0.24) 12px
+  ) !important;
+}
+
+.home-section--outro .home-cta-panel h1,
+.home-section--outro .home-cta-panel h2,
+.home-section--outro .home-cta-panel h3,
+.home-section--outro .home-cta-panel p,
+.page-card-content--portfolio .portfolio-card--cta h1,
+.page-card-content--portfolio .portfolio-card--cta h2,
+.page-card-content--portfolio .portfolio-card--cta h3,
+.page-card-content--portfolio .portfolio-card--cta p,
+.page-card-content--portfolio .portfolio-card--cta a,
+.page-card-content .feature-link-grid > a h1,
+.page-card-content .feature-link-grid > a h2,
+.page-card-content .feature-link-grid > a h3,
+.page-card-content .feature-link-grid > a h4,
+.page-card-content .feature-link-grid > a h5,
+.page-card-content .feature-link-grid > a p,
+.page-card-content .feature-link-grid > a span,
+.page-card-content .feature-link-grid > a button,
+.contact-main > .content-grid > .content-card:last-child h1,
+.contact-main > .content-grid > .content-card:last-child h2,
+.contact-main > .content-grid > .content-card:last-child h3,
+.contact-main > .content-grid > .content-card:last-child p,
+.contact-main > .content-grid > .content-card:last-child a,
+.contact-main > .content-grid > .content-card:last-child svg {
+  color: #ffffff !important;
+}
+
+/* All cards with secondary background use white text */
+.story-card,
+.inquiry-form-card,
+.capital-panels .capital-panel,
+.home-cta-panel,
+.home-uiverse-grid .home-uiverse-card,
+.content-card,
+.contact-glass-card {
+  color: #ffffff;
+}
+
+.story-card h1,
+.story-card h2,
+.story-card h3,
+.story-card p,
+.story-card li,
+.inquiry-form-card h1,
+.inquiry-form-card h2,
+.inquiry-form-card h3,
+.inquiry-form-card p,
+.inquiry-form-card label,
+.capital-panels .capital-panel h1,
+.capital-panels .capital-panel h2,
+.capital-panels .capital-panel h3,
+.capital-panels .capital-panel p,
+.capital-panels .capital-panel li,
+.home-cta-panel h1,
+.home-cta-panel h2,
+.home-cta-panel h3,
+.home-cta-panel p,
+.home-uiverse-grid .home-uiverse-card h1,
+.home-uiverse-grid .home-uiverse-card h2,
+.home-uiverse-grid .home-uiverse-card h3,
+.home-uiverse-grid .home-uiverse-card p,
+.content-card h1,
+.content-card h2,
+.content-card h3,
+.content-card p,
+.content-card li,
+.content-card a,
+.contact-glass-card h1,
+.contact-glass-card h2,
+.contact-glass-card h3,
+.contact-glass-card p,
+.contact-glass-card a {
+  color: #ffffff;
+}
+
+.story-card .home-title,
+.home-cta-panel .home-title,
+.content-card__body h1,
+.content-card__body h2,
+.content-card__body h3,
+.content-card__body h4,
+.content-card__body h5,
+.capital-card h3,
+.capital-panel h3,
+.contact-glass-card__content h3,
+.stats-grid .content-card__body h3,
+.home-uiverse-grid .home-uiverse-card .title-pill {
+  color: #ffffff !important;
 }
 
 @media (min-width: 980px) {
