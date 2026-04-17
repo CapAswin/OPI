@@ -1,20 +1,45 @@
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenuClose = document.getElementById("mobile-menu-close");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
 if (menuButton && mobileMenu) {
+  const setMobileMenuState = (open) => {
+    mobileMenu.classList.toggle("hidden", !open);
+    menuButton.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("has-mobile-menu-open", open);
+  };
+
   menuButton.addEventListener("click", () => {
     const isOpen = !mobileMenu.classList.contains("hidden");
-    mobileMenu.classList.toggle("hidden");
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    setMobileMenuState(!isOpen);
+  });
+
+  mobileMenuClose?.addEventListener("click", () => {
+    setMobileMenuState(false);
   });
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      menuButton.setAttribute("aria-expanded", "false");
+      setMobileMenuState(false);
     });
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileMenuState(false);
+    }
+  });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (window.innerWidth >= 820) {
+        setMobileMenuState(false);
+      }
+    },
+    { passive: true },
+  );
 }
 
 /* Landing hero parallax (index #home only) */
@@ -380,6 +405,7 @@ if (navStackEl) {
     if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
       mobileMenu.classList.add("hidden");
       menuButton?.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("has-mobile-menu-open");
     }
   });
 
