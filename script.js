@@ -164,9 +164,12 @@ function extractCardBody(doc, id) {
   return clone;
 }
 
-/** Deck stack: bottom card 20px from viewport top (landing peek), +10px per layer (home 20px, about 30px, …). */
+/** Deck stack: first card sits 10px below landing navbar, +10px per layer. */
 function stackTopInsetPx(index) {
-  return 20 + index * 10;
+  const siteHeader = document.getElementById("site-header");
+  const headerBottom = siteHeader?.getBoundingClientRect?.().bottom ?? 0;
+  const baseInset = Math.max(10, Math.round(headerBottom + 10));
+  return baseInset + index * 10;
 }
 
 function layoutStackDeck(stack, panels) {
@@ -183,11 +186,10 @@ function layoutStackDeck(stack, panels) {
 }
 
 function syncNavAria(stack) {
-  const activeId = stack.length ? stack[stack.length - 1] : null;
   document.querySelectorAll("[data-nav-card]").forEach((el) => {
     const id = el.dataset.navCard || cardIdFromHref(el.getAttribute("href"));
     if (!id || !NAV_CARD_ORDER.includes(id)) return;
-    const isCurrent = activeId ? id === activeId : id === "home";
+    const isCurrent = id === "home";
     el.classList.toggle("current", isCurrent);
     if (el.tagName === "A") {
       if (isCurrent) el.setAttribute("aria-current", "page");
@@ -398,6 +400,15 @@ if (navStackEl) {
       })
       .catch(() => {});
   });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (!stack.length) return;
+      layoutStackDeck(stack, panels);
+    },
+    { passive: true },
+  );
 
   const initial = cardIdFromHref(window.location.href);
   if (initial) {
