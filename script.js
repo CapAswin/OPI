@@ -211,7 +211,7 @@ function layoutStackDeck(stack, panels) {
 }
 
 function syncNavAria(stack) {
-  const activeId = stack.length ? stack[stack.length - 1] : "home";
+  const activeId = stack.length ? stack[stack.length - 1] : null;
   document.querySelectorAll("[data-nav-card]").forEach((el) => {
     const id = el.dataset.navCard || cardIdFromHref(el.getAttribute("href"));
     if (!id || !NAV_CARD_ORDER.includes(id)) return;
