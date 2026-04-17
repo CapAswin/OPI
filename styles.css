@@ -673,6 +673,7 @@ body {
   border-bottom-left-radius: var(--round-card);
   padding: var(--gap-action);
   gap: var(--gap-action);
+  border-top-right-radius: 30px;
 }
 
 .home-uiverse-grid .home-uiverse-card .corner i[data-corner] {
