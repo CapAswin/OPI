@@ -31,29 +31,25 @@
       };
     </script>
   </head>
-  <body class="home-page bg-white font-['Inter'] text-neutral-900 antialiased">
+  <body class="home-page inner-page bg-white font-['Inter'] text-neutral-900 antialiased">
     <main>
-      <section class="hero-frame hero-full">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="./assets/bg_video/body_bg.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-layer"></div>
+      <section class="page-shell">
 
         <header id="site-header" class="hero-header">
           <a href="./index.html" class="brand-mark">
-            <img src="./assets/images/fav_long_full_wht.png" alt="Opulent Prime Investment" />
+            <img src="./assets/images/fav_long_full.png" alt="Opulent Prime Investment" />
           </a>
 
           <nav class="desktop-nav" aria-label="Main navigation">
-            <a href="./index.html?card=home">Home</a>
-            <a class="current" href="./index.html?card=about" aria-current="page">About Us</a>
-            <a href="./index.html?card=portfolio">Portfolio</a>
-            <a href="./index.html?card=insights">Insights</a>
-            <a href="./index.html?card=contact">Contact</a>
+            <a href="./index.html">Home</a>
+            <a class="current" href="./about.html" aria-current="page">About Us</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./insights.html">Insights</a>
+            <a href="./contact.html">Contact</a>
           </nav>
 
           <div class="header-right">
-            <a href="./index.html?card=contact" class="contact-chip">
+            <a href="./contact.html" class="contact-chip">
               <span class="chip-label">Contact Us</span>
               <span class="chip-dot"></span>
             </a>
@@ -64,14 +60,14 @@
         </header>
 
         <div id="mobile-menu" class="mobile-menu hidden">
-          <a href="./index.html?card=home" class="mobile-link">Home</a>
-          <a href="./index.html?card=about" class="mobile-link current">About Us</a>
-          <a href="./index.html?card=portfolio" class="mobile-link">Portfolio</a>
-          <a href="./index.html?card=insights" class="mobile-link">Insights</a>
-          <a href="./index.html?card=contact" class="mobile-link">Contact</a>
+          <a href="./index.html" class="mobile-link">Home</a>
+          <a href="./about.html" class="mobile-link current">About Us</a>
+          <a href="./portfolio.html" class="mobile-link">Portfolio</a>
+          <a href="./insights.html" class="mobile-link">Insights</a>
+          <a href="./contact.html" class="mobile-link">Contact</a>
         </div>
 
-        <div id="page-card-content" class="page-card-content page-card-content--about hero-content page">
+        <div id="page-card-content" class="page-card-content page-card-content--about page-main-content">
           <h1 class="home-hero-headline">About Us</h1>
           <p class="folio-tagline">A vision that started before the trend</p>
           <div class="content-grid about-grid">
@@ -117,7 +113,7 @@
           </div>
 
           <div class="feature-link-grid">
-            <a href="./index.html?card=contact" class="flex flex-col items-center bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl">
+            <a href="./contact.html" class="flex flex-col items-center bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl">
               <img class="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="" />
               <div class="flex flex-col justify-between md:p-4 leading-normal">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">Build with context, not noise.</h5>

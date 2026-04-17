@@ -34,26 +34,24 @@
   <body class="home-page bg-white font-['Inter'] text-neutral-900 antialiased">
     <main>
       <section id="home" class="hero-frame hero-full">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="./assets/bg_video/body_bg.mp4" type="video/mp4" />
-        </video>
+        <div class="hero-image hero-image--landing" aria-hidden="true"></div>
         <div class="hero-layer"></div>
 
         <header id="site-header" class="hero-header">
           <a href="./index.html" class="brand-mark">
-            <img src="./assets/images/fav_long_full_wht.png" alt="Opulent Prime Investment" />
+            <img src="./assets/images/fav_long_full.png" alt="Opulent Prime Investment" />
           </a>
 
           <nav class="desktop-nav" aria-label="Main navigation">
-            <a href="./index.html?card=home" data-nav-card="home">Home</a>
-            <a href="./index.html?card=about" data-nav-card="about">About Us</a>
-            <a href="./index.html?card=portfolio" data-nav-card="portfolio">Portfolio</a>
-            <a href="./index.html?card=insights" data-nav-card="insights">Insights</a>
-            <a href="./index.html?card=contact" data-nav-card="contact">Contact</a>
+            <a class="current" href="./index.html" aria-current="page">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./insights.html">Insights</a>
+            <a href="./contact.html">Contact</a>
           </nav>
 
           <div class="header-right">
-            <a href="./index.html?card=contact" data-nav-card="contact" class="contact-chip">
+            <a href="./contact.html" class="contact-chip">
               <span class="chip-label">Contact Us</span>
               <span class="chip-dot"></span>
             </a>
@@ -70,11 +68,11 @@
           </div>
           <p class="mobile-menu-label">Menu</p>
           <div class="mobile-menu-links">
-            <a href="./index.html?card=home" data-nav-card="home" class="mobile-link">Home</a>
-            <a href="./index.html?card=about" data-nav-card="about" class="mobile-link">About Us</a>
-            <a href="./index.html?card=portfolio" data-nav-card="portfolio" class="mobile-link">Portfolio</a>
-            <a href="./index.html?card=insights" data-nav-card="insights" class="mobile-link">Insights</a>
-            <a href="./index.html?card=contact" data-nav-card="contact" class="mobile-link">Contact</a>
+            <a href="./index.html" class="mobile-link current">Home</a>
+            <a href="./about.html" class="mobile-link">About Us</a>
+            <a href="./portfolio.html" class="mobile-link">Portfolio</a>
+            <a href="./insights.html" class="mobile-link">Insights</a>
+            <a href="./contact.html" class="mobile-link">Contact</a>
           </div>
           <div class="mobile-menu-meta">
             <div>
@@ -97,22 +95,7 @@
           <h1 class="home-hero-headline">Global Capital Has a Direction. It&rsquo;s Moving.</h1>
         </div>
       </section>
-    </main>
-
-    <div id="nav-stack" class="nav-stack" aria-hidden="true">
-      <article
-        id="nav-card-home"
-        class="nav-card"
-        data-card-id="home"
-        data-nav-card-panel="home"
-        hidden
-        aria-hidden="true"
-      >
-        <div class="nav-card-toolbar">
-          <button type="button" class="nav-card-back" aria-label="Close Home panel">Back</button>
-        </div>
-        <div class="nav-card-scroll">
-          <div class="home-below-hero">
+      <div class="home-below-hero">
             <section id="overview" class="home-section">
           <h1 class="home-hero-headline">Home</h1>
           <div class="home-container">
@@ -370,14 +353,12 @@
                   Share your intent with our team and we will connect to design an approach aligned with your vision.
                 </p>
               </div>
-              <a href="./index.html?card=contact" data-nav-card="contact" class="start-btn home-cta-action">Investor inquiry</a>
+              <a href="./contact.html" class="start-btn home-cta-action">Investor inquiry</a>
             </div>
           </div>
         </section>
       </div>
-        </div>
-      </article>
-    </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>
