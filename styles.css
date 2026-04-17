@@ -412,7 +412,7 @@ body.has-mobile-menu-open {
 .hero-content.page {
   text-align: left;
   margin: auto 1.4rem auto 0;
-  margin-top: 14vh;
+  margin-top: clamp(4.75rem, 9vh, 7.25rem);
   max-width: 980px;
   padding-left: clamp(1.1rem, 4vw, 2.4rem);
   padding-right: 1.4rem;
@@ -421,6 +421,7 @@ body.has-mobile-menu-open {
 #page-card-content {
   width: 100%;
   max-width: none;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .hero-content h1 {
@@ -2119,6 +2120,50 @@ body.has-nav-card-open {
   font-size: 0.8rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+/* About: first four cards use staggered alignment */
+.page-card-content--about .about-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.8vw, 1.2rem);
+}
+
+.page-card-content--about .about-grid > .content-card {
+  grid-column: span 12;
+  min-height: clamp(14rem, 20vw, 18rem);
+}
+
+.page-card-content--about .feature-link-grid h5 {
+  font-family: "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.page-card-content--about .feature-link-grid {
+  justify-items: center;
+}
+
+.page-card-content--about .feature-link-grid > a {
+  margin-inline: auto;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-card-content--about .feature-link-grid > a .leading-normal {
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 980px) {
+  .page-card-content--about .about-grid > .content-card:nth-child(1),
+  .page-card-content--about .about-grid > .content-card:nth-child(4) {
+    grid-column: span 7;
+  }
+
+  .page-card-content--about .about-grid > .content-card:nth-child(2),
+  .page-card-content--about .about-grid > .content-card:nth-child(3) {
+    grid-column: span 5;
+  }
 }
 
 /* End cards across pages: black base with gold radial texture */
