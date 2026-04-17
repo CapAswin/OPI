@@ -448,19 +448,19 @@ body {
   text-wrap: balance;
 }
 
-/* About & long-form prose pages */
+/* About & long-form prose pages (do not alter landing/home card UI) */
 .home-below-hero,
-.nav-card-scroll,
-.page-card-content {
+.page-card-content,
+.nav-card:not([data-card-id="home"]) .nav-card-scroll {
   color: #000000;
 }
 
 .page-card-content h1,
 .page-card-content h2,
 .page-card-content h3,
-.nav-card-scroll h1,
-.nav-card-scroll h2,
-.nav-card-scroll h3 {
+.nav-card:not([data-card-id="home"]) .nav-card-scroll h1,
+.nav-card:not([data-card-id="home"]) .nav-card-scroll h2,
+.nav-card:not([data-card-id="home"]) .nav-card-scroll h3 {
   color: var(--heading);
 }
 
@@ -1074,14 +1074,6 @@ body {
 
 body.has-nav-card-open {
   overflow: hidden;
-}
-
-body.has-nav-card-open #site-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: calc(var(--nav-card-z-base) + 200);
 }
 
 .nav-stack {
