@@ -28,13 +28,9 @@
       };
     </script>
   </head>
-  <body class="home-page bg-white font-['Inter'] text-neutral-900 antialiased">
+  <body class="home-page inner-page contact-page bg-white font-['Inter'] text-neutral-900 antialiased">
     <main>
-      <section class="hero-frame hero-full hero-frame--contact">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="./assets/bg_video/body_bg.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-layer"></div>
+      <section class="page-shell">
 
         <header id="site-header" class="hero-header">
           <a href="./index.html" class="brand-mark">
@@ -42,15 +38,15 @@
           </a>
 
           <nav class="desktop-nav" aria-label="Main navigation">
-            <a href="./index.html?card=home">Home</a>
-            <a href="./index.html?card=about">About Us</a>
-            <a href="./index.html?card=portfolio">Portfolio</a>
-            <a href="./index.html?card=insights">Insights</a>
-            <a class="current" href="./index.html?card=contact" aria-current="page">Contact</a>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./insights.html">Insights</a>
+            <a class="current" href="./contact.html" aria-current="page">Contact</a>
           </nav>
 
           <div class="header-right">
-            <a href="./index.html?card=contact" class="contact-chip">
+            <a href="./contact.html" class="contact-chip">
               <span class="chip-label">Contact Us</span>
               <span class="chip-dot"></span>
             </a>
@@ -67,11 +63,11 @@
           </div>
           <p class="mobile-menu-label">Menu</p>
           <div class="mobile-menu-links">
-            <a href="./index.html?card=home" class="mobile-link">Home</a>
-            <a href="./index.html?card=about" class="mobile-link">About Us</a>
-            <a href="./index.html?card=portfolio" class="mobile-link">Portfolio</a>
-            <a href="./index.html?card=insights" class="mobile-link">Insights</a>
-            <a href="./index.html?card=contact" class="mobile-link current">Contact</a>
+            <a href="./index.html" class="mobile-link">Home</a>
+            <a href="./about.html" class="mobile-link">About Us</a>
+            <a href="./portfolio.html" class="mobile-link">Portfolio</a>
+            <a href="./insights.html" class="mobile-link">Insights</a>
+            <a href="./contact.html" class="mobile-link current">Contact</a>
           </div>
           <div class="mobile-menu-meta">
             <div>
@@ -85,7 +81,7 @@
           </div>
         </div>
 
-        <div class="hero-content page hero-content--contact">
+        <div class="page-main-content page-main-content--contact">
           <h1 class="home-hero-headline">Investor Inquiry</h1>
           <p>
             Every investment starts with a conversation. Before capital is allocated, before strategies are built, before opportunities are explored&mdash;there is one step that matters more than anything else: understanding the investor. Your objectives. Your timeline. Your comfort with risk. Your expectations.
@@ -94,7 +90,6 @@
             Share your details below. Our team will connect with you to design an approach aligned with your vision.
           </p>
         </div>
-      </section>
 
       <div class="home-below-hero">
         <section class="home-section" aria-labelledby="contact-inquiry-heading">
@@ -246,6 +241,7 @@
           </div>
         </section>
       </div>
+      </section>
     </main>
     <script src="./script.js"></script>
   </body>

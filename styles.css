@@ -170,6 +170,16 @@ body {
   backdrop-filter: blur(16px);
 }
 
+/* Non-home pages: keep navbar text black */
+.inner-page .desktop-nav a {
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.inner-page .desktop-nav a:hover,
+.inner-page .desktop-nav a.current {
+  color: #000000;
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -434,6 +444,35 @@ body.has-mobile-menu-open {
   padding-right: 1.4rem;
 }
 
+/* Inner pages: keep same header style without landing video */
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  margin: 0.5rem 1rem 1rem;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(212, 175, 53, 0.2), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #fffdf7 46%, #fff9ec 100%);
+  border: 1px solid rgba(212, 175, 53, 0.22);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.page-main-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding:
+    clamp(5.5rem, 11vh, 7rem)
+    clamp(1.1rem, 4vw, 2.4rem)
+    clamp(2.5rem, 5vw, 4rem);
+}
+
+.page-main-content--contact p {
+  max-width: 760px;
+  color: rgba(0, 0, 0, 0.82);
+  line-height: 1.65;
+}
+
 #page-card-content {
   width: 100%;
   max-width: none;
@@ -563,6 +602,11 @@ body.has-mobile-menu-open {
 
 .home-below-hero .home-section--outro {
   padding-bottom: clamp(4rem, 9vw, 6rem);
+}
+
+/* Contact page: remove section bg so page-shell gradient shows through */
+.contact-page .home-below-hero {
+  background: transparent;
 }
 
 .home-block-head {
@@ -1999,106 +2043,6 @@ body.has-mobile-menu-open {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1.25rem, 2vw, 2rem);
     align-items: stretch;
-  }
-}
-
-/* —— Stacked full-viewport nav cards (index) —— */
-:root {
-  --nav-card-z-base: 5000;
-  --nav-card-toolbar-h: 3.25rem;
-  /* Deck stack: first card top inset (JS sets per layer: 20, 30, 40px …) */
-  --nav-card-stack-first: 20px;
-}
-
-body.has-nav-card-open {
-  overflow: hidden;
-}
-
-.nav-stack {
-  position: fixed;
-  inset: 0;
-  z-index: var(--nav-card-z-base);
-  pointer-events: none;
-}
-
-.nav-stack .nav-card {
-  pointer-events: auto;
-}
-
-.nav-card {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* top set per stack index in JS (20px landing peek, 30px next, …) */
-  top: var(--nav-card-stack-first, 20px);
-  display: flex;
-  flex-direction: column;
-  padding-top: env(safe-area-inset-top, 0px);
-  background: #ffffff;
-  border-radius: 1.15rem 1.15rem 0 0;
-  box-shadow:
-    0 -10px 40px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(0, 0, 0, 0.04);
-  transform: translate3d(0, 105%, 0) scale(0.995);
-  opacity: 0;
-  transition:
-    transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.5s ease,
-    top 0.52s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.52s ease;
-  will-change: transform, opacity, top;
-  backface-visibility: hidden;
-}
-
-.nav-card--open {
-  transform: translate3d(0, 0, 0) scale(1);
-  opacity: 1;
-}
-
-.nav-card--instant {
-  transition: none;
-}
-
-.nav-card-toolbar {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: var(--nav-card-toolbar-h);
-  padding: 0.35rem 0.75rem 0.35rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-}
-
-.nav-card-back {
-  appearance: none;
-  border: 0;
-  border-radius: 999px;
-  padding: 0.45rem 0.95rem;
-  font: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #000000;
-  background: rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-}
-
-.nav-card-back:hover {
-  background: rgba(0, 0, 0, 0.08);
-}
-
-.nav-card-scroll {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-card {
-    transition: none;
   }
 }
 
