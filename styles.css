@@ -131,7 +131,7 @@ body {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.88);
   font-family: "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: clamp(0.82rem, 1.35vw, 1.05rem);
   padding: 0.48rem 0.95rem;
   border-radius: 999px;
   border: 0;
@@ -296,7 +296,15 @@ body {
   z-index: 7000;
   border-radius: 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(244, 243, 239, 0.62);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 100%),
+    repeating-radial-gradient(
+      circle at 92% 96%,
+      transparent 0,
+      transparent 11px,
+      rgba(0, 0, 0, 0.045) 11px,
+      rgba(0, 0, 0, 0.045) 12px
+    );
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow:
@@ -344,7 +352,7 @@ body {
   text-decoration: none;
   color: #05091a;
   font-family: "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: clamp(1.7rem, 8vw, 3.25rem);
+  font-size: clamp(1.3rem, 6.2vw, 2.6rem);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.03em;
@@ -1394,6 +1402,7 @@ body.has-mobile-menu-open {
   .contact-main > .content-grid {
     margin-top: 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-self: end;
   }
 
   .contact-main > .inquiry-form-card {
