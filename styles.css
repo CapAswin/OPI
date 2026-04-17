@@ -1325,6 +1325,15 @@ body {
   .contact-glass-card__overlay {
     min-height: 13rem;
   }
+
+  .structure-layout {
+    grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+
+  .structure-layout__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .start-btn {
