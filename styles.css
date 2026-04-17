@@ -547,7 +547,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   gap: 1.5rem;
-  border-radius: clamp(1.25rem, 2vw, 2rem);
+  border-radius: clamp(1.4rem, 2.2vw, 2.15rem) clamp(1.4rem, 2.2vw, 2.15rem) clamp(1.15rem, 1.8vw, 1.8rem) clamp(1.15rem, 1.8vw, 1.8rem);
   border: 1px solid rgba(28, 25, 18, 0.08);
   background: #ffffff;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
@@ -659,7 +659,7 @@ body {
   margin-top: clamp(1.75rem, 4vw, 2.5rem);
   max-width: 36rem;
   padding: clamp(1.35rem, 3vw, 1.85rem) clamp(1.25rem, 3vw, 1.75rem);
-  border-radius: clamp(1rem, 2vw, 1.35rem);
+  border-radius: clamp(1.15rem, 2.2vw, 1.5rem) clamp(1.15rem, 2.2vw, 1.5rem) clamp(0.95rem, 1.8vw, 1.2rem) clamp(0.95rem, 1.8vw, 1.2rem);
   background: #ffffff;
   border: 1px solid rgba(28, 25, 18, 0.1);
   box-shadow:
@@ -829,7 +829,7 @@ body {
   margin-inline: auto;
   padding: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 0.85rem;
+  border-radius: 1rem 1rem 0.85rem 0.85rem;
   background-color: var(--secondary);
   box-shadow:
     0 4px 10px rgba(0, 0, 0, 0.08),
@@ -1123,20 +1123,24 @@ body.has-nav-card-open {
   flex-direction: column;
   padding-top: env(safe-area-inset-top, 0px);
   background: #ffffff;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1.15rem 1.15rem 0 0;
   box-shadow:
     0 -10px 40px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.04);
-  transform: translate3d(0, 105%, 0);
+  transform: translate3d(0, 105%, 0) scale(0.995);
+  opacity: 0;
   transition:
-    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
-    top 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.38s ease;
-  will-change: transform;
+    transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease,
+    top 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.52s ease;
+  will-change: transform, opacity, top;
+  backface-visibility: hidden;
 }
 
 .nav-card--open {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
 }
 
 .nav-card--instant {
@@ -1215,7 +1219,7 @@ body.has-nav-card-open {
 }
 
 .rounded-base {
-  border-radius: 0.85rem;
+  border-radius: 1rem 1rem 0.85rem 0.85rem;
 }
 
 .shadow-xs {
