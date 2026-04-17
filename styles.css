@@ -598,6 +598,24 @@ body {
   padding-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
+/* Contact: hero is intro only; form + cards sit in .home-below-hero */
+.hero-full.hero-frame--contact {
+  min-height: min(78vh, 720px);
+}
+
+.contact-main {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.contact-main > .inquiry-form-card {
+  margin-top: 0;
+}
+
+.contact-main > .content-grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
