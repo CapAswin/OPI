@@ -45,7 +45,7 @@
           </a>
 
           <nav class="desktop-nav" aria-label="Main navigation">
-            <a class="current" href="./index.html?card=home" data-nav-card="home" aria-current="page">Home</a>
+            <a href="./index.html?card=home" data-nav-card="home">Home</a>
             <a href="./index.html?card=about" data-nav-card="about">About Us</a>
             <a href="./index.html?card=portfolio" data-nav-card="portfolio">Portfolio</a>
             <a href="./index.html?card=insights" data-nav-card="insights">Insights</a>
@@ -64,11 +64,28 @@
         </header>
 
         <div id="mobile-menu" class="mobile-menu hidden">
-          <a href="./index.html?card=home" data-nav-card="home" class="mobile-link current">Home</a>
-          <a href="./index.html?card=about" data-nav-card="about" class="mobile-link">About Us</a>
-          <a href="./index.html?card=portfolio" data-nav-card="portfolio" class="mobile-link">Portfolio</a>
-          <a href="./index.html?card=insights" data-nav-card="insights" class="mobile-link">Insights</a>
-          <a href="./index.html?card=contact" data-nav-card="contact" class="mobile-link">Contact</a>
+          <div class="mobile-menu-top">
+            <a href="./index.html" class="mobile-menu-brand">Opulent</a>
+            <button id="mobile-menu-close" class="mobile-menu-close" type="button" aria-label="Close menu">&times;</button>
+          </div>
+          <p class="mobile-menu-label">Menu</p>
+          <div class="mobile-menu-links">
+            <a href="./index.html?card=home" data-nav-card="home" class="mobile-link">Home</a>
+            <a href="./index.html?card=about" data-nav-card="about" class="mobile-link">About Us</a>
+            <a href="./index.html?card=portfolio" data-nav-card="portfolio" class="mobile-link">Portfolio</a>
+            <a href="./index.html?card=insights" data-nav-card="insights" class="mobile-link">Insights</a>
+            <a href="./index.html?card=contact" data-nav-card="contact" class="mobile-link">Contact</a>
+          </div>
+          <div class="mobile-menu-meta">
+            <div>
+              <p class="mobile-menu-meta-label">Visit</p>
+              <p class="mobile-menu-meta-copy">Dubai, UAE</p>
+            </div>
+            <div>
+              <p class="mobile-menu-meta-label">Work With Us</p>
+              <p class="mobile-menu-meta-copy">advisory@opulentprimeinvestment.ae</p>
+            </div>
+          </div>
         </div>
 
         <div class="hero-content hero-content--home">
@@ -100,8 +117,10 @@
       <div class="home-below-hero">
         <section id="overview" class="home-section">
           <div class="home-container">
-            <div class="folio-prose">
-              <p>
+            <div class="overview-intro">
+              <p class="overview-intro__kicker">Capital Direction</p>
+              <div class="folio-prose overview-intro__prose">
+              <p class="overview-intro__lead">
                 There are moments in global economics where capital doesn&rsquo;t just grow; it moves. It shifts from
                 uncertainty to stability, from stagnation to opportunity, from noise to structure. We are in one of those
                 moments.
@@ -111,12 +130,13 @@
                 the way they once did. Markets have become unpredictable, and access to the right opportunities is
                 limited, not because they don&rsquo;t exist, but because they are not structured for everyone.
               </p>
-              <p>This is where Opulent Prime Investment DWC LLC steps in.</p>
-              <p>We don&rsquo;t simply offer investments.</p>
-              <p>
+              <p class="overview-intro__statement">This is where Opulent Prime Investment DWC LLC steps in.</p>
+              <p class="overview-intro__statement">We don&rsquo;t simply offer investments.</p>
+              <p class="overview-intro__signature">
                 We design pathways&mdash;for global capital to enter one of the most resilient and forward-moving economies
                 in the world: the United Arab Emirates.
               </p>
+              </div>
             </div>
           </div>
         </section>
@@ -229,141 +249,113 @@
           </div>
         </section>
 
-        <section class="home-section home-section--stats">
+        <section class="home-section home-section--story-cards">
           <div class="home-container">
-            <header class="home-block-head">
-              <h2 class="home-title home-title--compact">An ecosystem, not just an Investment Firm</h2>
-            </header>
-            <div class="folio-prose">
-              <p>Opulent Prime Investment is part of a larger vision: Opulent Group, established in 2010.</p>
-              <p>Over the years, this vision has expanded into multiple verticals:</p>
-              <ul>
-                <li>A marketing engine that understands digital growth.</li>
-                <li>A real estate arm that identifies and enters high-potential assets.</li>
-                <li>A luxury segment that deals in high-value tangible investments.</li>
-                <li>An influencer ecosystem that captures the future of digital economy.</li>
-                <li>An AI platform designed to automate and scale modern business operations.</li>
-              </ul>
-              <p>Each of these is not separate.</p>
-              <p>They are connected.</p>
-              <p>They form an ecosystem where capital, visibility, demand, and execution intersect.</p>
+            <div class="story-card-grid">
+              <article class="story-card">
+                <h2 class="home-title home-title--compact">An ecosystem, not just an Investment Firm</h2>
+                <div class="folio-prose story-card__prose">
+                  <p>Opulent Prime Investment is part of a larger vision: Opulent Group, established in 2010.</p>
+                  <p>Over the years, this vision has expanded into multiple verticals:</p>
+                  <ul>
+                    <li>A marketing engine that understands digital growth.</li>
+                    <li>A real estate arm that identifies and enters high-potential assets.</li>
+                    <li>A luxury segment that deals in high-value tangible investments.</li>
+                    <li>An influencer ecosystem that captures the future of digital economy.</li>
+                    <li>An AI platform designed to automate and scale modern business operations.</li>
+                  </ul>
+                  <p>Each of these is not separate.</p>
+                  <p>They are connected.</p>
+                  <p>They form an ecosystem where capital, visibility, demand, and execution intersect.</p>
+                </div>
+              </article>
+
+              <article class="story-card story-card--media">
+                <img
+                  src="./assets/images/capital_im1.jpg"
+                  alt="Capital growth and structured investment landscape"
+                  width="1600"
+                  height="1000"
+                  loading="lazy"
+                />
+                <div class="story-card__floating-grid">
+                  <article class="story-float-card">
+                    <h3>A Different Kind of Investment Approach</h3>
+                    <p>We do not believe in aggressive promises.</p>
+                    <p>We believe in disciplined execution.</p>
+                    <p>We operate within the market with one principle: <strong>Sustainable growth over speculative gains.</strong></p>
+                  </article>
+
+                  <article class="story-float-card">
+                    <h3>A Simple Invitation</h3>
+                    <p>If you are looking at the UAE, exploring diversification, and want capital to be structured, not scattered, the conversation is simple.</p>
+                    <p>We build strategies. You bring intent.</p>
+                    <p><strong>Opulent Prime Investment DWC LLC</strong></p>
+                    <p>Invest globally. Diversify intelligently. Grow securely in the UAE.</p>
+                  </article>
+                </div>
+              </article>
             </div>
           </div>
         </section>
 
-        <section class="home-section">
-          <div class="home-container">
-            <header class="home-block-head">
-              <h2 class="home-title home-title--compact">A Different Kind of Investment Approach</h2>
-            </header>
-            <div class="folio-prose">
-              <p>We do not believe in aggressive promises.</p>
-              <p>We believe in disciplined execution.</p>
-              <p>We do not position ourselves as advisors sitting outside the market.</p>
-              <p>We operate within it.</p>
-              <p>Every allocation, every sector entry, every decision is guided by one principle:</p>
-              <p><strong>Sustainable growth over speculative gains.</strong></p>
-            </div>
-          </div>
-        </section>
-
-        <section class="home-section home-section--stats">
-          <div class="home-container">
-            <header class="home-block-head">
-              <h2 class="home-title home-title--compact">A Simple Invitation</h2>
-            </header>
-            <div class="folio-prose">
-              <p>If you are an investor looking at the UAE&hellip;</p>
-              <p>If you are exploring diversification beyond your current geography&hellip;</p>
-              <p>If you want your capital to be structured, not scattered&hellip;</p>
-              <p>Then the conversation is simple.</p>
-              <p>We build strategies.</p>
-              <p>You bring intent.</p>
-              <p><strong>Opulent Prime Investment DWC LLC</strong></p>
-              <p>Invest globally. Diversify intelligently. Grow securely in the UAE.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="home-section">
+        <section class="home-section home-section--capital">
           <div class="home-container">
             <header class="home-block-head">
               <p class="home-kicker">Investment solutions</p>
               <h2 class="home-title home-title--compact">Understanding Time, Risk, and Capital</h2>
             </header>
-            <div class="folio-prose">
+            <div class="folio-prose capital-intro">
               <p>Every investor is different.</p>
               <p>But every investment follows three constants: Time. Risk. Return.</p>
               <p>The challenge is not choosing one.</p>
               <p>It is balancing all three.</p>
             </div>
-
-            <h3 class="folio-h3">Short-Term Perspective (12 to 18 Months)</h3>
-            <div class="folio-prose">
-              <p>Liquidity-focused | Lower risk | Fixed / semi-fixed returns</p>
-              <p>
-                Short-term investments are designed for liquidity and controlled exposure. They are often structured around
-                opportunities that have defined timelines and relatively predictable outcomes.
-              </p>
-              <p>This is where discipline matters the most, because speed without structure becomes risk.</p>
+            <div class="capital-layout">
+              <article class="capital-card">
+                <h3>Short-Term Perspective (12 to 18 Months)</h3>
+                <p class="capital-chip">Liquidity-focused | Lower risk | Fixed / semi-fixed returns</p>
+                <p>Short-term investments are designed for liquidity and controlled exposure with defined timelines.</p>
+              </article>
+              <article class="capital-card">
+                <h3>Mid-Term Allocation (18+ to 24 Months)</h3>
+                <p class="capital-chip">Balanced growth | Mixed return model</p>
+                <p>Mid-term investing balances stability and growth by combining fixed structures with performance opportunities.</p>
+              </article>
+              <article class="capital-card">
+                <h3>Long-Term Wealth Creation (24+ Months)</h3>
+                <p class="capital-chip">Wealth creation | Equity participation | Asset appreciation</p>
+                <p>Long-term investing compounds value through equity participation and strategic sector positioning.</p>
+              </article>
             </div>
 
-            <h3 class="folio-h3">Mid-Term Allocation (18+ to 24 Months)</h3>
-            <div class="folio-prose">
-              <p>Balanced growth | Mixed return model</p>
-              <p>
-                Mid-term investing allows flexibility. It creates room for both stability and growth, combining fixed
-                structures with performance-driven opportunities.
-              </p>
-              <p>This is where portfolios begin to take shape, not as individual investments, but as a balanced system.</p>
+            <div class="capital-panels">
+              <article class="capital-panel">
+                <h3>Our Core Strategy</h3>
+                <p>We operate on a structured allocation model with active deployment and a strong reserve buffer.</p>
+              </article>
+              <article class="capital-panel">
+                <h3>Our Investment Model</h3>
+                <ul>
+                  <li>60&ndash;65% actively invested</li>
+                  <li>30&ndash;35% reserve capital (stability buffer)</li>
+                </ul>
+              </article>
             </div>
 
-            <h3 class="folio-h3">Long-Term Wealth Creation (24+ Months)</h3>
-            <div class="folio-prose">
-              <p>Wealth creation | Equity participation | Asset appreciation</p>
-              <p>Long-term investments are where real wealth is built.</p>
-              <p>
-                They are not driven by immediate returns, but by compounding value; through equity participation, asset
-                appreciation, and strategic positioning within growing sectors.
-              </p>
-            </div>
-
-            <h3 class="folio-h3">Our Core Strategy</h3>
-            <div class="folio-prose">
-              <p>We operate on a structured allocation model.</p>
-              <p>A significant portion of capital is actively deployed across diversified sectors.</p>
-              <p>A strong reserve component is maintained to ensure liquidity, protection, and strategic flexibility.</p>
-              <p>Because in volatile markets, liquidity is not just safety.</p>
-              <p>It is power.</p>
-            </div>
-
-            <h3 class="folio-h3">Our Investment Model</h3>
-            <div class="folio-prose">
-              <p>We follow a disciplined allocation strategy:</p>
-              <ul>
-                <li>60&ndash;65% actively invested</li>
-                <li>30&ndash;35% reserve capital (stability buffer)</li>
-              </ul>
-            </div>
-
-            <h3 class="folio-h3">Beyond Investment Types</h3>
-            <div class="folio-prose">
-              <p>
-                Whether fixed, variable, or equity-based, the underlying principle remains the same: Capital must be
-                placed where it can perform&mdash;without being overexposed.
-              </p>
+            <article class="capital-panel capital-panel--wide">
+              <h3>Beyond Investment Types &amp; Risk Strategy</h3>
+              <p>Capital must perform without being overexposed. We do not eliminate risk; we manage and distribute it intelligently.</p>
               <ul>
                 <li>Fixed Return</li>
                 <li>Variable Return</li>
                 <li>Equity / Profit Sharing</li>
                 <li>Asset-backed investments</li>
               </ul>
-            </div>
-
-            <h3 class="folio-h3">Risk Strategy</h3>
+            </article>
+            
             <div class="folio-prose">
-              <p>We don&rsquo;t eliminate risk.</p>
-              <p>We manage and distribute it intelligently.</p>
+              <p>Because in volatile markets, liquidity is not just safety. It is power.</p>
             </div>
           </div>
         </section>
