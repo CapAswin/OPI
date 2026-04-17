@@ -558,7 +558,7 @@ body.has-mobile-menu-open {
 }
 
 .home-below-hero .home-section:first-child {
-  padding-top: clamp(3.25rem, 7vw, 5rem);
+  padding-top: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 .home-below-hero .home-section--outro {
@@ -1954,7 +1954,7 @@ body.has-mobile-menu-open {
   }
 
   .home-below-hero .home-section:first-child {
-    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-top: clamp(2.75rem, 6vw, 4.25rem);
   }
 
   .home-below-hero .home-section--outro {
