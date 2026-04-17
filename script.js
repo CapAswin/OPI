@@ -186,10 +186,11 @@ function layoutStackDeck(stack, panels) {
 }
 
 function syncNavAria(stack) {
+  const activeId = stack.length ? stack[stack.length - 1] : "home";
   document.querySelectorAll("[data-nav-card]").forEach((el) => {
     const id = el.dataset.navCard || cardIdFromHref(el.getAttribute("href"));
     if (!id || !NAV_CARD_ORDER.includes(id)) return;
-    const isCurrent = id === "home";
+    const isCurrent = id === activeId;
     el.classList.toggle("current", isCurrent);
     if (el.tagName === "A") {
       if (isCurrent) el.setAttribute("aria-current", "page");
