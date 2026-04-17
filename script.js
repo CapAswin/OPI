@@ -48,7 +48,7 @@ const prefersReducedMotion =
   typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (landingHero && !prefersReducedMotion) {
-  const video = landingHero.querySelector(".hero-video");
+  const video = landingHero.querySelector(".hero-video, .hero-image--landing");
   const heroContent = landingHero.querySelector(".hero-content--home");
   let ticking = false;
 
